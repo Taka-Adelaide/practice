@@ -1,13 +1,27 @@
-def fizzbuzz(n)
-  if n % 3 == 0 && n % 5 == 0
-    "FizzBuzz"
-  elsif n % 5 == 0
-    "Buzz"
-  elsif n % 3 == 0
-    "Fizz"
+def greeting(country)
+  if country == "jpn"
+    "こんにちは"
+  elsif country == "chi"
+    "你好"
   else
-    puts "none"
+    "Hello"
   end
 end
 
-puts fizzbuzz(8)
+def welcoming(country)
+  if country == "jpn"
+    "ようこそ"
+  elsif country == "chi"
+    "清在"
+  else
+    "welcome"
+  end
+end
+
+greeting = greeting("jpn")
+welcoming = welcoming("jpn")
+name = "Taro"
+
+message = "#{name}, #{greeting}#{welcoming}"
+
+puts message
