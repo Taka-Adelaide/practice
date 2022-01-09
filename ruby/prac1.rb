@@ -1,15 +1,31 @@
-numbers = [1,2,3,4,5,6]
-# even_numbers = numbers.select {|n| n.even?}
-# even_numbers =
-# numbers.select do |n|
-#   n.even?
+# def charge(age)
+#   case age
+#   when 0..5
+#     0
+#   when 6..12
+#     300
+#   when 13..18
+#     600
+#   else
+#     1000
+#   end
 # end
 
-# even_number = numbers.find {|n| n.even?}
-even_number =
-  numbers.find do |n|
-    n.even?
-  end
-  
+# def charge(age)
+#   if 0 <= age && age <= 5
+#     0
+#   elsif 6 <= age && age <= 12
+#     300
+#   elsif 13 <= age && age <= 18
+#     600
+#   else 
+#     1000
+#   end
+# end
 
-puts even_number
+charge = 
+  (1..5).to_a
+
+
+puts charge
+# puts charge(18)
