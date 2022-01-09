@@ -23,9 +23,25 @@
 #   end
 # end
 
-charge = 
-  (1..5).to_a
+# charge = 
+#   (1...5).to_a
 
 
-puts charge
+# puts charge
 # puts charge(18)
+
+# a = 0.to_s(16).rjust(10, '0')
+# puts a
+
+# hex = "#12abcd"
+# r = hex[1..2]
+# g = hex[3..4]
+# b = hex[5..6]
+
+r = '00'.hex
+g = 'ff'.hex
+b = '2a'.hex
+
+puts r
+puts g
+puts b
