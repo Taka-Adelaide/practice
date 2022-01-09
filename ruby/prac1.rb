@@ -1,47 +1,30 @@
-# def charge(age)
-#   case age
-#   when 0..5
-#     0
-#   when 6..12
-#     300
-#   when 13..18
-#     600
-#   else
-#     1000
-#   end
+# def greeting(*name)
+#   "#{name.join('さんと')}さん、こんにちは"
 # end
 
-# def charge(age)
-#   if 0 <= age && age <= 5
-#     0
-#   elsif 6 <= age && age <= 12
-#     300
-#   elsif 13 <= age && age <= 18
-#     600
-#   else 
-#     1000
-#   end
+# puts greeting('Suzuki')
+# puts greeting('Suzuki', 'Tanaka')
+# puts greeting('Suzuki', 'Tanaka', 'Sato')
+
+# a = 'Ruby'.chars
+# print a
+
+# b = 'Ruby, Java, PHP'.split(',')
+# print b
+
+# a = Array.new(10) { |n| n % 3 + 1 }
+# a = Array.new(10) do |n|
+#   n % 3 + 1
 # end
+# print a
 
-# charge = 
-#   (1...5).to_a
+# a = Array.new(5, 'default')
+a = Array.new(5) {'default'}
 
+str = a[0]
+str.upcase!
 
-# puts charge
-# puts charge(18)
+# print str
 
-# a = 0.to_s(16).rjust(10, '0')
-# puts a
+print a
 
-# hex = "#12abcd"
-# r = hex[1..2]
-# g = hex[3..4]
-# b = hex[5..6]
-
-r = '00'.hex
-g = 'ff'.hex
-b = '2a'.hex
-
-puts r
-puts g
-puts b
