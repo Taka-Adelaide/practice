@@ -1,8 +1,15 @@
-numbers = [1,2,3,4,5]
-# new_num = []
-# numbers.each {|n| new_num << n * 10 }
+numbers = [1,2,3,4,5,6]
+# even_numbers = numbers.select {|n| n.even?}
+# even_numbers =
+# numbers.select do |n|
+#   n.even?
+# end
 
-new_num = numbers.map {|n| n * 10}
+# even_number = numbers.find {|n| n.even?}
+even_number =
+  numbers.find do |n|
+    n.even?
+  end
+  
 
-puts new_num
-print new_num
+puts even_number
