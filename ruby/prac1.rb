@@ -1,9 +1,8 @@
-fruits = ['apple', 'orange', 'melon']
+a = []
+10.step(-10, -2) {|n| a << n}
+# 10.upto(50) do |n|
+#   a << n
+# end
 
 
-  fruits.each.with_index(100) do |fruit, i|
-    a = "#{i}: #{fruit}"
-    puts a
-  end
-
-# puts a
+print a
