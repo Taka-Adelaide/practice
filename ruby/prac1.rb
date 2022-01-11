@@ -1,8 +1,12 @@
-a = []
-10.step(-10, -2) {|n| a << n}
-# 10.upto(50) do |n|
-#   a << n
+currencies = {'jpn' => 'yen', 'us' => 'dollar'}
+currencies['itl'] = 'euro'
+
+# puts currencies
+# puts currencies['us']
+
+# currencies.each do |key, value|
+#   puts "#{key} : #{value}"
 # end
 
-
-print a
+currencies.delete('jpn')
+puts currencies
