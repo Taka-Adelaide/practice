@@ -1,6 +1,7 @@
-currencies = {jp: 'yen', us: 'doller', eu: 'euro'}
-# puts currencies.keys
-# puts currencies.values
+text = <<TEXT
+I love Ruby.
+Python is a great language.
+Java and JavaScript are different language.
+TEXT
 
-# puts currencies.has_key?(:us)
-puts currencies.has_value?('euro')
+puts text.scan(/[A-Z][A-Za-z]+/)
