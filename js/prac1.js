@@ -1,7 +1,8 @@
-let user_hand = prompt("グー　チョキ　パー");
+let user_hand = prompt("グー チョキ パー");
 while((user_hand != "グー") && (user_hand != "チョキ") && (user_hand != "パー") && (user_hand != null)){
   alert("いずれかを選んでください");
-  user_hand = prompt("グー　チョキ　パー");
+  user_hand = prompt("グー チョキ パー");
+
 }
 let js_hand = getJShand();
 let judge = winLose(user_hand, js_hand);
@@ -9,9 +10,8 @@ let judge = winLose(user_hand, js_hand);
 if(user_hand != null){
   alert("あなたは" + user_hand + "です。JSは" + js_hand + "です。結果は" + judge + "です。");
 }else{
-  alert("またチャレンジしてね");
+  alert("またチャレンジしてね！");
 }
-
 
 function getJShand(){
   let js_hand_number = Math.floor(Math.random() * 3);
