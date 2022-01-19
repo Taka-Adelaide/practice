@@ -1,15 +1,35 @@
-class User
-  def initialize(name, age)
-    # puts "name: #{name}, age: #{age}"
-    @name = name
-    @age = age
-  end
+# class User
+#   def initialize(name)
+#     @name = name
+#   end
 
-  def hello
-    puts "hello! #{@name} happy #{@age}years old!"
+#   def self.create_users(names)
+#     names.map do |name|
+#       User.new(name)
+#     end
+#   end
+
+#   def hello
+#     "Hello! #{@name}"
+#   end
+# end
+
+# names = ['Alice', 'Bob', 'Carol']
+# users = User.create_users(names)
+# users.each do |user|
+#   puts user.hello
+# end
+
+class Product
+  DEFAULT_PRICE = 0
+
+  attr_reader :name, :price
+
+  def initialize(name, price = DEFAULT_PRICE)
+    @name = name
+    @price = price
   end
 end
 
-# User.new('Alice', 20)
-user = User.new('Alice', 20)
-user.hello
+product = Product.new('A Free Movie')
+puts product.price
