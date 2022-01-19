@@ -1,30 +1,15 @@
 class User
-  attr_reader :first_name, :last_name, :age
-
-  def initialize(first_name, last_name, age)
-    @first_name = first_name
-    @last_name = last_name
+  def initialize(name, age)
+    # puts "name: #{name}, age: #{age}"
+    @name = name
     @age = age
   end
 
-  # def full_name
-  #   "#{first_name} #{last_name}"
-  # end
+  def hello
+    puts "hello! #{@name} happy #{@age}years old!"
+  end
 end
 
-users = []
-users << User.new('Alice', 'Ruby', 20)
-users << User.new('Bob', 'Python', 30)
-
-def full_name(user)
-  "#{user.first_name} #{user.last_name}"
-end
-
-# users.each do |user|
-#   puts "氏名: #{user.full_name}、年齢: #{user.age}"
-# end
-
-users.each do |user|
-  puts "氏名:#{full_name(user)}、年齢:#{user.age}"
-end
-
+# User.new('Alice', 20)
+user = User.new('Alice', 20)
+user.hello
