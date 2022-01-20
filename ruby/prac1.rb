@@ -1,51 +1,63 @@
-# class Product
-#   attr_reader :name, :price
+# class User
+#   attr_reader :name
 
-#   def initialize(name, price)
+#   def initialize(name, weight)
 #     @name = name
-#     @price = price
+#     @weight = weight
 #   end
 
-#   def to_s
-#     "name: #{name}, price: #{price}"
-#   end
-# end
-
-# class DVD < Product
-#   attr_reader :running_time
-
-#   def initialize(name, price, running_time)
-#     # @name = name
-#     # @price = price
-#     super(name, price)
-#     @running_time = running_time
+#   def heavier_than?(other_user)
+#     other_user.weight < @weight
 #   end
 
-#   def to_s
-#     "#{super}, running_time: #{running_time}"
+#   protected
+#   def weight
+#     @weight
 #   end
 # end
 
-# product = Product.new('Movie', 1500)
-# puts product.to_s
+# alice = User.new('Alice', 50)
+# bob = User.new('Bob', 60)
 
-# dvd = DVD.new('A movie', 1000, 120)
-# # puts dvd.name
-# # puts dvd.price
-# # puts dvd.running_time
-# puts dvd.to_s
+# puts alice.heavier_than?(bob)
+# puts bob.heavier_than?(alice)
+# # puts bob.weight
 
-class User
 
-  def hello
-    puts "Hello! #{name}"
+class Product
+  @name = 'Product'
+
+  def self.name
+    @name
   end
 
-  private
+  def initialize(name)
+    @name = name
+  end
+
   def name
-    'Alice'
+    @name
   end
 end
 
-user = User.new
-user.hello
+class DVD < Product
+  @name = 'DVD'
+
+  def self.name
+    @name
+  end
+
+  def upcase_name
+    @name.upcase
+  end
+end
+
+puts Product.name
+puts DVD.name
+
+product = Product.new('Movie')
+puts product.name
+
+dvd = DVD.new('Dvd')
+puts dvd.name
+puts dvd.upcase_name
