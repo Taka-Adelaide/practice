@@ -1,35 +1,51 @@
-# class User
-#   def initialize(name)
+# class Product
+#   attr_reader :name, :price
+
+#   def initialize(name, price)
 #     @name = name
+#     @price = price
 #   end
 
-#   def self.create_users(names)
-#     names.map do |name|
-#       User.new(name)
-#     end
-#   end
-
-#   def hello
-#     "Hello! #{@name}"
+#   def to_s
+#     "name: #{name}, price: #{price}"
 #   end
 # end
 
-# names = ['Alice', 'Bob', 'Carol']
-# users = User.create_users(names)
-# users.each do |user|
-#   puts user.hello
+# class DVD < Product
+#   attr_reader :running_time
+
+#   def initialize(name, price, running_time)
+#     # @name = name
+#     # @price = price
+#     super(name, price)
+#     @running_time = running_time
+#   end
+
+#   def to_s
+#     "#{super}, running_time: #{running_time}"
+#   end
 # end
 
-class Product
-  DEFAULT_PRICE = 0
+# product = Product.new('Movie', 1500)
+# puts product.to_s
 
-  attr_reader :name, :price
+# dvd = DVD.new('A movie', 1000, 120)
+# # puts dvd.name
+# # puts dvd.price
+# # puts dvd.running_time
+# puts dvd.to_s
 
-  def initialize(name, price = DEFAULT_PRICE)
-    @name = name
-    @price = price
+class User
+
+  def hello
+    puts "Hello! #{name}"
+  end
+
+  private
+  def name
+    'Alice'
   end
 end
 
-product = Product.new('A Free Movie')
-puts product.price
+user = User.new
+user.hello
