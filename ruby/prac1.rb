@@ -1,63 +1,16 @@
-# class User
-#   attr_reader :name
-
-#   def initialize(name, weight)
-#     @name = name
-#     @weight = weight
-#   end
-
-#   def heavier_than?(other_user)
-#     other_user.weight < @weight
-#   end
-
-#   protected
-#   def weight
-#     @weight
-#   end
-# end
-
-# alice = User.new('Alice', 50)
-# bob = User.new('Bob', 60)
-
-# puts alice.heavier_than?(bob)
-# puts bob.heavier_than?(alice)
-# # puts bob.weight
-
-
-class Product
-  @name = 'Product'
-
-  def self.name
-    @name
-  end
-
-  def initialize(name)
-    @name = name
-  end
-
-  def name
-    @name
+def fizz_buzz(n)
+  if n % 15 == 0
+    "FizzBuzz"
+  elsif n % 5 == 0
+    "Buzz"
+  elsif n % 3 == 0
+    "Fizz"
+  else
+    n.to_s
   end
 end
 
-class DVD < Product
-  @name = 'DVD'
-
-  def self.name
-    @name
-  end
-
-  def upcase_name
-    @name.upcase
-  end
-end
-
-puts Product.name
-puts DVD.name
-
-product = Product.new('Movie')
-puts product.name
-
-dvd = DVD.new('Dvd')
-puts dvd.name
-puts dvd.upcase_name
+puts fizz_buzz(30)
+puts fizz_buzz(25)
+puts fizz_buzz(27)
+puts fizz_buzz(4)
