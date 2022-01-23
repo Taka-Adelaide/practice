@@ -1,4 +1,3 @@
-# 元の形
 # def to_hex(r, g, b)
 #   '#' +
 #     r.to_s(16).rjust(2, '0') +
@@ -6,7 +5,6 @@
 #     b.to_s(16).rjust(2, '0')
 # end
 
-# DRY原則に基づいてeach文で簡略化(ファクタリング)
 def to_hex(r, g, b)
   hex = '#'
   [r, g, b].each do |n|
@@ -15,24 +13,18 @@ def to_hex(r, g, b)
   hex
 end
 
-# def to_ints(hex)
-#   r = hex[1..2]
-#   g = hex[3..4]
-#   b = hex[5..6]
-#   ints = []
-#   [r, g, b].each do |s|
-#     ints << s.hex
-#   end
-#   ints
-# end
-
-# mapメソッドでファクタリング
 def to_ints(hex)
   r = hex[1..2]
   g = hex[3..4]
   b = hex[5..6]
-  ints = []
+  # ints = []
+  # [r, g, b].each do |s|
+  #   ints << s.hex
+  # end
+  # ints
+
   [r, g, b].map do |s|
     s.hex
   end
 end
+
