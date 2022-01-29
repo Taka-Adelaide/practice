@@ -1,16 +1,23 @@
-module Taggable
-  def price_tag
-    "#{price}円"
+def method_1
+  puts 'method_1 start'
+  begin
+    method_2
+  rescue
+    puts '例外'
   end
+  puts 'method_1 end'
 end
 
-class Product
-  include Taggable
-
-  def price
-    1000
-  end
+def method_2
+  puts 'method_2 start'
+  method_3
+  puts 'method_2 end'
 end
 
-product = Product.new
-puts product.price_tag
+def method_3
+  puts 'method_3 start'
+  1 / 0
+  puts 'method_3 end'
+end
+
+method_1
