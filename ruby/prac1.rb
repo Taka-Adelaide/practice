@@ -1,23 +1,31 @@
-def method_1
-  puts 'method_1 start'
-  begin
-    method_2
-  rescue
-    puts '例外'
+class Product
+  def title
+    log 'title is called'
+    'Good Movie'
   end
-  puts 'method_1 end'
+
+  private
+
+  def log(text)
+    puts "[LOG] #{text}"
+  end
 end
 
-def method_2
-  puts 'method_2 start'
-  method_3
-  puts 'method_2 end'
+class User
+  def name
+    log 'name is called'
+    'Bob'
+  end
+
+  private
+
+  def log(text)
+    puts "[LOG]#{text}"
+  end
 end
 
-def method_3
-  puts 'method_3 start'
-  1 / 0
-  puts 'method_3 end'
-end
+product = Product.new
+product.title
 
-method_1
+user = User.new
+user.name
