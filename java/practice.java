@@ -6,6 +6,7 @@ class Main {
     System.out.println("何人分の情報を入力しますか：");
     int n = scanner.nextInt();
     int maxAge = 0;
+    int totalAge = 0;
     
     for(int i = 0; i < n; i++ ){
       System.out.println(i + 1 +"人目");
@@ -20,6 +21,7 @@ class Main {
       if (age > maxAge) {
         maxAge = age;
       }
+      totalAge += age
       
       System.out.println("身長：");
       double height = scanner.nextDouble();
@@ -30,6 +32,9 @@ class Main {
       Person.printData(firstName, lastName, age, height, weight);
     }
     System.out.println("最高年齢は" + maxAge + "歳です。");
+
+    double averageAge = totalAge / n;
+    System.out.println("平均年齢は" + averageAge + "歳です");
   }
 }
 
