@@ -1,73 +1,26 @@
-import java.util.Scanner;
-
 class Main {
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("何人分の情報を入力しますか：");
-    int n = scanner.nextInt();
-    int maxAge = 0;
-    int totalAge = 0;
+    // 変数nameに、好きな名前を代入してください
+    String name = "Taro";
     
-    for(int i = 0; i < n; i++ ){
-      System.out.println(i + 1 +"人目");
-      System.out.println("名前：");
-      String firstName = scanner.next();
-      
-      System.out.println("名字：");
-      String lastName = scanner.next();
-      
-      System.out.println("年齢：");
-      int age = scanner.nextInt();
-      if (age > maxAge) {
-        maxAge = age;
-      }
-      totalAge += age
-      
-      System.out.println("身長：");
-      double height = scanner.nextDouble();
-      
-      System.out.println("体重：");
-      double weight = scanner.nextDouble();
-      
-      Person.printData(firstName, lastName, age, height, weight);
-    }
-    System.out.println("最高年齢は" + maxAge + "歳です。");
-
-    double averageAge = totalAge / n;
-    System.out.println("平均年齢は" + averageAge + "歳です");
-  }
-}
-
-class Person {
-  public static void printData(String firstName, String lastName, int age, double height, double weight) {
-    System.out.println("名前は" + fullName(firstName, lastName) + "です");
+    // 変数ageに、好きな年齢を代入してください
+    int age = 10;
+    
+    // 変数heightに、好きな身長を代入してください（例: 1.2）
+    double height = 1.5;
+    
+    // 変数weightに、好きな体重を代入してください（例: 20.0）
+    double weight = 40.5;
+    
+    // 変数bmiに、BMIを計算して代入してください
+    double bmi = weight / height / height;
+    
+    // 名前、年齢、身長、体重、BMIに関する情報を出力してください
+    System.out.println("名前は" + name + "です");
     System.out.println("年齢は" + age + "歳です");
-    if(age >= 20) {
-      System.out.println("成年者です");
-    } else {
-      System.out.println("未成年者です");
-    }
-    
     System.out.println("身長は" + height + "mです");
     System.out.println("体重は" + weight + "kgです");
-    double bmi = bmi(height, weight);
-    System.out.println("BMIは" + Math.round(bmi) + "です");
-    if(isHealthy(bmi)) {
-      System.out.println("健康です");
-    } else {
-      System.out.println("健康ではありません");
-    }
-  }
-  
-  public static String fullName(String firstName, String lastName) {
-    return firstName + " " + lastName;
-  }
-  
-  public static double bmi(double height, double weight) {
-    return weight / height / height;
-  }
-  
-  public static boolean isHealthy(double bmi) {
-    return bmi >= 18.5 && bmi < 25;
+    System.out.println("BMIは" + bmi + "です");
+    
   }
 }
