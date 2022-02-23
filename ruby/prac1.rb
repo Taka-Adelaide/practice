@@ -1,31 +1,17 @@
-class Product
-  def title
-    log 'title is called'
-    'Good Movie'
-  end
-
-  private
-
-  def log(text)
-    puts "[LOG] #{text}"
-  end
-end
-
-class User
-  def name
-    log 'name is called'
-    'Bob'
-  end
-
-  private
-
-  def log(text)
-    puts "[LOG]#{text}"
+def fizzbuzz(n)
+  if n % 15 == 0
+    "FizzBuzz"
+  elsif n % 5 == 0
+    "Buzz"
+  elsif n % 3 == 0
+    "Fizz"
+  else
+    n.to_s
   end
 end
 
-product = Product.new
-product.title
+puts fizzbuzz(30)
+puts fizzbuzz(20)
+puts fizzbuzz(9)
+puts fizzbuzz(4)
 
-user = User.new
-user.name
