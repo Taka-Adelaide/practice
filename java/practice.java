@@ -1,92 +1,94 @@
+import java.util.Scanner;
 class Main {
   public static void main(String[] args) {
-    // 仕事を「医者」にしてください
-    Person person1 = new Person("Kate", "Jones", 27, 1.6, 50.0, "医者");
-    person1.printData();
-    // 仕事を「教師」にしてください
-    Person person2 = new Person("John", "Christopher", "Smith", 65, 1.75, 80.0, "教師");
-    person2.printData();
-    System.out.println("----------------------");
-    // person1の仕事を「獣医」に変更してください
-    person1.setJob("獣医");
+    Scanner scanner = new Scanner(System.in);
+    Bicycle bicycle = new Bicycle("ビアンキ", "緑");
+    System.out.println("【自転車の情報】");
+    bicycle.printData();
+    System.out.println("-----------------");
+    System.out.println("走る距離を入力してください：");
+    int i = scanner.nextInt();
+    bicycle.run(i);
     
-    // 「person1の仕事を◯◯に変更しました」と出力されるようにしてください
-    System.out.println("person1の仕事を" + person1.getJob() + "に変更しました");
-    
-    person1.printData();
+    System.out.println("=================");
+    Car car = new Car("フェラーリ", "赤");
+    System.out.println("【車の情報】");
+    car.printData();
+    System.out.println("-----------------");
+    System.out.print("走る距離を入力してください：");
+    int carI = scanner.nextInt();
+    car.run(carI);
+    System.out.println("-----------------");
+    System.out.print("給油する量を入力してください：");
+    int oil = scanner.nextInt();
+    car.charge(oil);
   }
 }
 
-class Person {
-  private static int count = 0;
-  private String firstName;
-  private String middleName;
-  private String lastName;
-  private int age;
-  private double height;
-  private double weight;
-  // インスタンスフィールド「job」を追加してください
-  private String job;
+class Car {
+  private String name;
+  private String color;
+  private int distance = 0;
+  private int fuel = 100;
   
-  // コンストラクタを書き換えてください
-  Person(String firstName, String lastName, int age, double height, double weight, String job) {
-    Person.count++;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-    this.height = height;
-    this.weight = weight;
-    this.job = job;
+  Car(String name, String color) {
+    this.name = name;
+    this.color = color;
   }
   
-  // コンストラクタを書き換えてください
-  Person(String firstName, String middleName, String lastName, int age, double height, double weight, String job) {
-    this(firstName, lastName, age, height, weight, job);
-    this.middleName = middleName;
-  }
-
-  public String getMiddleName() {
-    return this.middleName;
-  }
-  
-  // jobのゲッターを定義してください
-  public String getJob() {
-    return this.job;
-  }
-
-
-  public void setMiddleName(String middleName) {
-    this.middleName = middleName;
-  }
-  
-  // jobのセッターを定義してください
-  public void setJob(String job) {
-    this.job = job;
-  }
-  
-
-  public String fullName() {
-    if (this.middleName == null) {
-      return this.firstName + " " + this.lastName;
-    } else {
-      return this.firstName + " " + this.middleName + " " + this.lastName;
-    }
-  }
-
   public void printData() {
-    System.out.println("私の名前は" + this.fullName() + "です");
-    System.out.println("年齢は" + this.age + "歳です");
-    System.out.println("BMIは" + Math.round(this.bmi()) + "です");
-    // 「仕事は◯◯です」と出力してください
-    System.out.println("仕事は" + this.job + "です");
-    
+    System.out.println("名前：" + this.name);
+    System.out.println("色：" + this.color);
+    System.out.println("走行距離：" + this.distance + "km");
+    System.out.println("ガソリン量：" + this.fuel + "L");
   }
+  
+  public void run(int distance){
+    System.out.println(distance + "km走ります");
+    if(distance <= this.fuel) {
+      this.distance += distance;
+      this.fuel -= distance;
+    } else {
+      System.out.println("ガソリンが足りません");
+    }
+    System.out.println("走行距離：" + this.distance + "km");
+    System.out.println("ガソリン量：" + this.fuel + "L");
+  }
+  
+  public void charge(int oil) {
+    System.out.println( oil + "L給油します");
+    if(oil <= 0) {
+      System.out.println("給油できません");
+    } else if(oil + this.fuel >= 100) {
+      System.out.println("満タンまで給油します");
+      this.fuel = 100;
+    } else {
+      this.fuel += oil;
+    }
+    System.out.println("ガソリン量：" + this.fuel + "L");
+  }
+}
 
-  public double bmi() {
-    return this.weight / this.height / this.height;
+class Bicycle {
+  private String name;
+  private String color;
+  private int distance = 0;
+  
+  Bicycle(String name, String color) {
+    this.name = name;
+    this.color = color;
   }
-
-  public static void printCount() {
-    System.out.println("合計" + Person.count + "人です");
+  
+  public void printData() {
+    System.out.println("名前：" + this.name);
+    System.out.println("色：" + this.color);
+    System.out.println("走行距離：" + this.distance + "km");
   }
+  
+  public void run(int distance) {
+    System.out.println(distance + "km走ります");
+    this.distance += distance;
+    System.out.println("走行距離：" + this.distance + "km");
+  }
+  
 }
