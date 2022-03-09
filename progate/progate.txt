@@ -1,1 +1,2 @@
 progate にてSQL実施
+progateにて学習実施
