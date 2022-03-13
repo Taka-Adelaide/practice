@@ -1,2 +1,1 @@
-progate にてSQL実施
-progateにて学習実施
+progateでpython学習
