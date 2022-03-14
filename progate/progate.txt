@@ -1,1 +1,2 @@
 progateでpython学習
+PythonとJava復習
