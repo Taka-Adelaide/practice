@@ -1,2 +1,1 @@
-progateでpython学習
-PythonとJava復習
+Python 学習実施
